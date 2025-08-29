@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; background:#f5f5f5; display:flex; justify-content:center; align-items:center; height:100vh; }
+.container { background:#fff; padding:30px; border-radius:10px; box-shadow:0px 0px 20px rgba(0,0,0,0.2); width:500px; text-align:center; }
+input, select, button { width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; box-sizing:border-box; }
+button { color:white; border:none; cursor:pointer; }
+button.green { background:#28a745; } button.green:hover { background:#218838; }
+button.orange { background:#fd7e14; } button.orange:hover { background:#e06b00; }
+button.purple { background:#6f42c1; } button.purple:hover { background:#5936a2; }
+.error { color:red; font-weight:bold; } hr { margin:20px 0; } .small { font-size:12px; color:#555; }

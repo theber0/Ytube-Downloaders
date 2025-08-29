@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YouTube Downloader</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>YouTube Downloader</h1>
+{% if message %}<p class="error">{{ message }}</p>{% endif %}
+<form method="POST" enctype="multipart/form-data">
+<input type="text" name="video_url" placeholder="Single Video URL" value="{{ last_url if last_url else '' }}">
+<button type="submit" name="action" value="fetch_formats" class="orange">Fetch Video Formats</button>
+{% if formats %}
+<select name="format_code">{% for f in formats %}<option>{{ f }}</option>{% endfor %}</select>
+<button type="submit" name="action" value="download_video" class="green">Download Video</button>
+{% endif %}
+<hr>
+<input type="text" name="playlist_url" placeholder="Playlist URL">
+<button type="submit" name="action" value="download_playlist" class="purple">Download Playlist</button>
+<hr>
+<input type="file" name="cookie_file" accept=".txt">
+<p class="small">Optional: Upload cookies.txt for private videos</p>
+</form>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
